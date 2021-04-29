@@ -1,0 +1,55 @@
+method: giraffe
+data:
+  dataset_name: images
+  path: data/comprehensive_cars/images/*.jpg
+  classes: []
+  img_size: 64
+  fid_file: null
+  random_crop: False
+  celebA_center_crop: False
+  use_tanh_range: False
+model:
+  z_dim: 256
+  z_dim_bg: 128
+  decoder: simple
+  discriminator: dc
+  generator: simple
+  background_generator: simple
+  bounding_box_generator: simple
+  neural_renderer: simple
+  decoder_kwargs: {}
+  discriminator_kwargs: {}
+  generator_kwargs: {}
+  bounding_box_generator_kwargs: {}
+  neural_renderer_kwargs: {}
+  background_generator_kwargs:
+    hidden_size: 64
+    n_blocks: 4
+    downscale_p_by: 12
+    skips: []
+training:
+  out_dir:  out/00
+  batch_size: 32
+  print_every: 10
+  checkpoint_every: 500
+  visualize_every: 1000
+  validate_every: 10000
+  backup_every: 1000000
+  learning_rate: 0.0005
+  learning_rate_d: 0.0001
+  model_selection_metric: fid_score
+  model_selection_mode: minimize
+  n_workers: 8
+  logfile: train.log
+  overwrite_visualization: False
+  multi_gpu: false
+  optimizer: RMSprop
+  optimizer_kwargs: {}
+  n_eval_images: 10000
+test:
+  model_file: model_best.pt
+  n_images: 20000
+  take_generator_average: True
+rendering:
+  render_dir: rendering
+  render_program: ['object_translation_vertical', 'object_translation_horizontal', 'object_rotation', 'interpolate_app', 'interpolate_shape', 'interpolate_app_bg']

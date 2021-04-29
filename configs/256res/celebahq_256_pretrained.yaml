@@ -1,0 +1,5 @@
+inherit_from: configs/256res/celebahq_256.yaml
+training:
+  out_dir:  out/celebahq256_pretrained
+test:
+  model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/giraffe/models/checkpoint_celebahq256-d5b11030.pt

@@ -1,0 +1,5 @@
+inherit_from: configs/64res/cats_64.yaml
+training:
+  out_dir:  out/cats64_pretrained
+test:
+  model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/giraffe/models/checkpoint_cats64-ff00b26f.pt

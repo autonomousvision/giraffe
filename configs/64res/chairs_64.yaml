@@ -1,0 +1,13 @@
+data:
+  path: data/chairs/images/*.png
+  fid_file: data/chairs/fid_files/chairs_64.npz
+model:
+  bounding_box_generator_kwargs:
+    scale_range_min: [0.5, 0.5, 0.5]
+    scale_range_max: [0.5, 0.5, 0.5]
+    translation_range_min: [0., 0., 0.]
+    translation_range_max: [0., 0., 0.]
+  generator_kwargs:
+    range_v: [0.05, 0.5]
+training:
+  out_dir:  out/chairs64

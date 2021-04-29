@@ -1,0 +1,13 @@
+method: gan2d
+data:
+  path: data/comprehensive_cars/images/*.jpg
+  fid_file: data/comprehensive_cars/fid_files/comprehensiveCars_64.npz
+  random_crop: True
+  use_tanh_range: True
+model:
+  generator: simple
+  discriminator: resnet
+training:
+  out_dir:  out/cars64_2dgan
+  learning_rate: 0.0001
+  batch_size: 64

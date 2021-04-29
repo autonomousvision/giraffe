@@ -1,0 +1,5 @@
+inherit_from: configs/64res/celeba_64.yaml
+training:
+  out_dir:  out/celeba64_pretrained
+test:
+  model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/giraffe/models/checkpoint_celeba64-dbe11f3e.pt

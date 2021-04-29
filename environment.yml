@@ -1,0 +1,22 @@
+name: giraffe
+channels:
+  - anaconda
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.8.3
+  - pytorch=1.7.0
+  - torchvision=0.8.1
+  - cudatoolkit=10.1
+  - tensorboard=2.4.0
+  - pyyaml=5.3.1
+  - python-lmdb=0.98
+  - kornia=0.3.0
+  - scipy=1.5.2
+  - tqdm=4.54.0
+  - imageio=2.9.0
+  - imageio-ffmpeg=0.4.2
+  - pip=21.0.1
+  - pip:
+    - opencv-python==4.5.1.48

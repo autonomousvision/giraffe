@@ -1,0 +1,26 @@
+data:
+  dataset_name: lsun
+  path: data/church/LSUN
+  classes: scene_categories/church_outdoor_train_lmdb
+  fid_file: data/church/fid_files/church_256.npz
+  img_size: 256
+model:
+  background_generator_kwargs:
+    rgb_out_dim: 256
+  bounding_box_generator_kwargs:
+    scale_range_min: [0.45, 0.45, 0.45]
+    scale_range_max: [0.55, 0.55, 0.55]
+    translation_range_min: [-0.15, -0.15, 0]
+    translation_range_max: [0.15, 0.15, 0]
+  generator_kwargs:
+    range_v: [0.5, 0.5]
+    fov: 30
+    backround_rotation_range: [0., 0.25]
+  neural_renderer_kwargs:
+    input_dim: 256
+    n_feat: 256
+  decoder_kwargs:
+    rgb_out_dim: 256
+training:
+  out_dir:  out/church256
+  learning_rate: 0.00025

@@ -1,0 +1,28 @@
+data:
+  path: data/clevr2345/images/*/*.png
+  fid_file: data/clevr2345/fid_files/clevr2345_256.npz
+  img_size: 256
+model:
+  z_dim: 64
+  z_dim_bg: 32
+  background_generator_kwargs:
+    hidden_size: 32
+  bounding_box_generator_kwargs: #f = 0.2378777237835723 
+    scale_range_min: [0.17, 0.17, 0.17]
+    scale_range_max: [0.17, 0.17, 0.17]
+    translation_range_min: [-0.71, -0.71, 0]
+    translation_range_max: [.71, 0.71, 0]
+    rotation_range: [0., 0.]
+    n_boxes: 5
+    prior_npz_file:  data/clevr2345/prior/clevr2345_256.npz
+    z_level_plane: 0.1665
+    object_on_plane: True
+  generator_kwargs:
+    range_v: [0.33333, 0.33333]
+    sample_object_existance: True
+  decoder_kwargs:
+    hidden_size: 64
+training:
+  out_dir:  out/clevr2345256
+rendering:
+  render_program: ['render_add_clevr10', 'render_add_clevr6', 'object_translation_circle']

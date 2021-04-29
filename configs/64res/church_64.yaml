@@ -1,0 +1,18 @@
+method: giraffe
+data:
+  dataset_name: lsun
+  path: data/church/LSUN
+  classes: scene_categories/church_outdoor_train_lmdb
+  fid_file: data/church/fid_files/church_64.npz
+model:
+  bounding_box_generator_kwargs:
+    scale_range_min: [0.45, 0.45, 0.45]
+    scale_range_max: [0.55, 0.55, 0.55]
+    translation_range_min: [-0.15, -0.15, 0]
+    translation_range_max: [0.15, 0.15, 0]
+  generator_kwargs:
+    range_v: [0.5, 0.5]
+    fov: 30
+    backround_rotation_range: [0., 0.25]
+training:
+  out_dir:  out/church64

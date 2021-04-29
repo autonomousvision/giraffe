@@ -1,0 +1,15 @@
+method: gan2d
+data:
+  dataset_name: lsun
+  path: data/church/LSUN
+  classes: scene_categories/church_outdoor_train_lmdb
+  fid_file: data/church/fid_files/church_64.npz
+  random_crop: True
+  use_tanh_range: True
+model:
+  generator: simple
+  discriminator: resnet
+training:
+  out_dir:  out/church64_2dgan
+  learning_rate: 0.0001
+  batch_size: 64

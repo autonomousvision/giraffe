@@ -1,0 +1,27 @@
+data:
+  path: celebahq/images/*.npy
+  img_size: 256
+  celebA_center_crop: True
+  fid_file: data/celebahq/fid_files/celebahq_256.npz
+model:
+  background_generator_kwargs:
+    rgb_out_dim: 256
+  bounding_box_generator_kwargs:
+    scale_range_min: [0.21, 0.21, 0.21]
+    scale_range_max: [0.21, 0.21, 0.21]
+    translation_range_min: [0., 0., 0.]
+    translation_range_max: [0., 0., 0.]
+    rotation_range: [0.375, 0.625]
+  generator_kwargs:
+    range_v: [0.4167, 0.5]
+    fov: 10
+  neural_renderer_kwargs:
+    input_dim: 256
+    n_feat: 256
+  decoder_kwargs:
+    rgb_out_dim: 256
+training:
+  out_dir:  out/celebahq256
+  learning_rate: 0.00025
+rendering:
+  render_program: ['object_rotation', 'interpolate_app', 'interpolate_shape']

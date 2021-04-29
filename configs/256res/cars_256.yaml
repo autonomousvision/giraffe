@@ -1,0 +1,24 @@
+data:
+  path: data/comprehensive_cars/images/*.jpg
+  fid_file: data/comprehensive_cars/fid_files/comprehensiveCars_256.npz
+  random_crop: True
+  img_size: 256
+model:
+  background_generator_kwargs:
+    rgb_out_dim: 256
+  bounding_box_generator_kwargs:
+    scale_range_min: [0.2, 0.16, 0.16]
+    scale_range_max: [0.25, 0.2, 0.2]
+    translation_range_min: [-0.22, -0.12, 0.]
+    translation_range_max: [0.22, 0.12, 0.]
+  generator_kwargs:
+    range_v: [0.41667, 0.5]
+    fov: 10
+  neural_renderer_kwargs:
+    input_dim: 256
+    n_feat: 256
+  decoder_kwargs:
+    rgb_out_dim: 256
+training:
+  out_dir:  out/cars256
+  learning_rate: 0.00025

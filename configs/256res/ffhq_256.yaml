@@ -1,0 +1,26 @@
+data:
+  path: data/ffhq/images/*.jpg
+  fid_file: data/ffhq/fid_files/ffhq_256.npz
+  img_size: 256
+model:
+  background_generator_kwargs:
+    rgb_out_dim: 256
+  bounding_box_generator_kwargs:
+    scale_range_min: [0.21, 0.21, 0.21]
+    scale_range_max: [0.21, 0.21, 0.21]
+    translation_range_min: [0., 0., 0.]
+    translation_range_max: [0., 0., 0.]
+    rotation_range: [0.40278, 0.59722]
+  generator_kwargs:
+    range_v: [0.4167, 0.5]
+    fov: 10
+  neural_renderer_kwargs:
+    input_dim: 256
+    n_feat: 256
+  decoder_kwargs:
+    rgb_out_dim: 256
+training:
+  out_dir:  out/ffhq256
+  learning_rate: 0.00025
+rendering:
+  render_program: ['object_rotation', 'interpolate_app', 'interpolate_shape']
