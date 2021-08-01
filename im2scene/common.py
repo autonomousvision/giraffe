@@ -153,7 +153,7 @@ def origin_to_world(n_points, camera_mat, world_mat, scale_mat=None,
         camera_mat (tensor): camera matrix
         world_mat (tensor): world matrix
         scale_mat (tensor): scale matrix
-        invert (bool): whether to invert the matrices (default: true)
+        invert (bool): whether to invert the matrices (default: false)
     '''
     batch_size = camera_mat.shape[0]
     device = camera_mat.device
