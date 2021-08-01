@@ -191,7 +191,7 @@ def image_points_to_world(image_points, camera_mat, world_mat, scale_mat=None,
         camera_mat (tensor): camera matrix
         world_mat (tensor): world matrix
         scale_mat (tensor): scale matrix
-        invert (bool): whether to invert matrices (default: true)
+        invert (bool): whether to invert matrices (default: False)
     '''
     batch_size, n_pts, dim = image_points.shape
     assert(dim == 2)
