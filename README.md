@@ -43,7 +43,7 @@ To train a model from scratch or to use our ground truth activations for evaluat
 
 For this, please run
 ```
-bash scripts/download_data.sh
+bash scripts/download_dataset.sh
 ```
 and following the instructions. This script should download and unpack the data automatically into the `data/` folder.
 
