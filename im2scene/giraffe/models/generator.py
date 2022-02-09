@@ -23,7 +23,7 @@ class Generator(nn.Module):
         range_radius(tuple): radius range
         depth_range (tuple): near and far depth plane
         background_generator (nn.Module): background generator
-        bounding_box_generaor (nn.Module): bounding box generator
+        bounding_box_generator (nn.Module): bounding box generator
         resolution_vol (int): resolution of volume-rendered image
         neural_renderer (nn.Module): neural renderer
         fov (float): field of view
